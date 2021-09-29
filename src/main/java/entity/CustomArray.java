@@ -10,4 +10,8 @@ public class CustomArray {
     public int[] getCustomArray() {
         return CustomArray;
     }
+
+    public void setCustomArray(int[] customArray) {
+        CustomArray = customArray;
+    }
 }
