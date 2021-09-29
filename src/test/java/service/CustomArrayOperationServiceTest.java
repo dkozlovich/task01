@@ -48,4 +48,12 @@ public class CustomArrayOperationServiceTest {
         Assert.assertEquals(exp,CustomArrayOperationService.getNumberOfNegative(customArray));
     }
 
+    @Test
+    public void testReplaceAllNegative() {
+        CustomArray res = new CustomArray(new int[]{1,2,3,-4,-5});
+        CustomArray exp = new CustomArray(new int[]{1,2,3,4,5});
+        CustomArrayOperationService.replaceAllNegative(res);
+        Assert.assertEquals(exp,res);
+    }
+
 }
