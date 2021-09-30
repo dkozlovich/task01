@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Validator {
 
-    private static Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
 
     public static CustomArray validate(String str) {
         String[] s = str.split(",\\s|\\s-\\s|\\s");

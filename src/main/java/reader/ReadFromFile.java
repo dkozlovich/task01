@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class ReadFromFile {
 
-    private static Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
 
     public CustomArray read(File file) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
