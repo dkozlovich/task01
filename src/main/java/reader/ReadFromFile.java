@@ -1,6 +1,7 @@
 package reader;
 
 import entity.CustomArray;
+import exception.CustomArrayException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,24 +11,29 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class ReadFromFile {
 
     private static final Logger logger = LogManager.getLogger();
 
-    public CustomArray read(File file) throws IOException {
+    public CustomArray read(File file) throws IOException, CustomArrayException {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
-            CustomArray customArray;
+            CustomArray customArray = null;
             while ((line = reader.readLine()) != null) {
-                customArray = CustomArrayParser.parse(line);
+                try {
+                    customArray = CustomArrayParser.parse(line);
+                } catch (CustomArrayException e) {
+                    e.printStackTrace();
+                }
                 if (customArray != null) {
-                    logger.log(Level.INFO,"Valid array found!");
+                    logger.log(Level.INFO,"Valid array found! " + Arrays.toString(customArray.getCustomArray()));
                     return customArray;
                 }
             }
         }
         logger.log(Level.ERROR,"No valid arrays found!");
-        return null;
+        throw new CustomArrayException(new Throwable("No valid arrays found!"));
     }
 }
