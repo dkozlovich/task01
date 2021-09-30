@@ -2,11 +2,12 @@ package validation;
 
 import entity.CustomArray;
 import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Validator {
 
-    static Logger LOGGER;
+    private static Logger logger = LogManager.getLogger();
 
     public static CustomArray validate(String str) {
         String[] s = str.split(",\\s|\\s-\\s|\\s");
@@ -16,9 +17,12 @@ public class Validator {
                 intArray[i] = Integer.parseInt(s[i]);
             }
         } catch (NumberFormatException e) {
-            LOGGER.log(Level.ERROR,"The string is not valid.");
+            logger.log(Level.ERROR,"The string is not valid.");
             return null;
         }
-        return new CustomArray(intArray);
+        if (intArray.length > 1) {
+            logger.log(Level.INFO, "Valid string found!");
+            return new CustomArray(intArray);
+        } else return null;
     }
 }
