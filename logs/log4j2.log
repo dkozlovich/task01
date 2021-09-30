@@ -10,3 +10,7 @@
 2021-09-30 21:47:22,117 ERROR v.Validator [main] The string is not valid.
 2021-09-30 21:47:22,117 INFO v.Validator [main] Valid string found!
 2021-09-30 21:47:22,117 INFO r.ReadFromFile [main] Valid array found!
+2021-09-30 23:21:22,388 ERROR p.CustomArrayParser [main] The string is not valid.
+2021-09-30 23:21:22,410 ERROR p.CustomArrayParser [main] The string is not valid.
+2021-09-30 23:21:22,410 INFO p.CustomArrayParser [main] Valid string found!
+2021-09-30 23:21:22,410 INFO r.ReadFromFile [main] Valid array found!

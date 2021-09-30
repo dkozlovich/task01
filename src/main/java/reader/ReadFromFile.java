@@ -4,7 +4,7 @@ import entity.CustomArray;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import validation.Validator;
+import parser.CustomArrayParser;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,7 +20,7 @@ public class ReadFromFile {
             String line;
             CustomArray customArray;
             while ((line = reader.readLine()) != null) {
-                customArray = Validator.validate(line);
+                customArray = CustomArrayParser.parse(line);
                 if (customArray != null) {
                     logger.log(Level.INFO,"Valid array found!");
                     return customArray;

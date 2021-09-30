@@ -1,16 +1,17 @@
-package validation;
+package parser;
 
 import entity.CustomArray;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Validator {
+public class CustomArrayParser {
 
     private static final Logger logger = LogManager.getLogger();
+    private static final String REGEX = ",\\s|\\s-\\s|\\s";
 
-    public static CustomArray validate(String str) {
-        String[] s = str.split(",\\s|\\s-\\s|\\s");
+    public static CustomArray parse(String str) {
+        String[] s = str.split(REGEX);
         int[] intArray = new int[s.length];
         try {
             for (int i = 0; i < intArray.length; i++) {
