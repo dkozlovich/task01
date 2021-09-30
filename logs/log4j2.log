@@ -1,0 +1,12 @@
+2021-09-30 20:56:23,956 ERROR v.Validator [main] The string is not valid.
+2021-09-30 20:56:23,972 ERROR v.Validator [main] The string is not valid.
+2021-09-30 20:56:23,972 INFO v.Validator [main] Valid string found!
+2021-09-30 20:56:23,972 INFO r.ReadFromFile [main] Valid array found!
+2021-09-30 20:56:52,101 ERROR v.Validator [main] The string is not valid.
+2021-09-30 20:56:52,103 ERROR v.Validator [main] The string is not valid.
+2021-09-30 20:56:52,103 INFO v.Validator [main] Valid string found!
+2021-09-30 20:56:52,113 INFO r.ReadFromFile [main] Valid array found!
+2021-09-30 21:47:22,095 ERROR v.Validator [main] The string is not valid.
+2021-09-30 21:47:22,117 ERROR v.Validator [main] The string is not valid.
+2021-09-30 21:47:22,117 INFO v.Validator [main] Valid string found!
+2021-09-30 21:47:22,117 INFO r.ReadFromFile [main] Valid array found!
