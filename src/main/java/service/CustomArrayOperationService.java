@@ -2,7 +2,6 @@ package service;
 
 import entity.CustomArray;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class CustomArrayOperationService {
@@ -30,13 +29,13 @@ public class CustomArrayOperationService {
     }
 
     public static int getNumberOfPositive(CustomArray customArray) {
-        int number = 0;
+        int number;
         number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x > 0).count();
         return number;
     }
 
     public static int getNumberOfNegative(CustomArray customArray) {
-        int number = 0;
+        int number;
         number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x < 0).count();
         return number;
     }
