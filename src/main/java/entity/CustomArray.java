@@ -3,18 +3,14 @@ package entity;
 import java.util.Arrays;
 
 public class CustomArray {
-    private int[] CustomArray;
+    private int[] customArray;
 
     public CustomArray(int[] array) {
-        this.CustomArray = array;
+        this.customArray = array;
     }
 
     public int[] getCustomArray() {
-        return CustomArray;
-    }
-
-    public void setCustomArray(int[] customArray) {
-        CustomArray = customArray;
+        return customArray;
     }
 
     @Override
@@ -24,11 +20,11 @@ public class CustomArray {
 
         CustomArray that = (CustomArray) o;
 
-        return Arrays.equals(CustomArray, that.CustomArray);
+        return Arrays.equals(customArray, that.customArray);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(CustomArray);
+        return Arrays.hashCode(customArray);
     }
 }
