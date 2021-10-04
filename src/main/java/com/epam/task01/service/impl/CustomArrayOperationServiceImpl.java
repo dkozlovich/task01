@@ -8,6 +8,15 @@ import java.util.stream.IntStream;
 
 public class CustomArrayOperationServiceImpl implements CustomArrayOperationService {
 
+    private static CustomArrayOperationService instance;
+
+    public static CustomArrayOperationService getInstance() {
+        if (instance == null) {
+            instance = new CustomArrayOperationServiceImpl();
+        }
+        return instance;
+    }
+
     public int getMin(CustomArray customArray) {
         int min = IntStream.of(customArray.getCustomArray()).min().getAsInt();
         return min;

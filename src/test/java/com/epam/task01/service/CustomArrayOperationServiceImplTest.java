@@ -12,7 +12,7 @@ public class CustomArrayOperationServiceImplTest {
 
     @Before
     public void init() {
-        customArrayOperationService = new CustomArrayOperationServiceImpl();
+        customArrayOperationService = CustomArrayOperationServiceImpl.getInstance();
     }
 
     @Test
