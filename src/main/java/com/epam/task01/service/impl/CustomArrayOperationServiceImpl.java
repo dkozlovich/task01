@@ -3,7 +3,6 @@ package com.epam.task01.service.impl;
 import com.epam.task01.entity.CustomArray;
 import com.epam.task01.service.CustomArrayOperationService;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class CustomArrayOperationServiceImpl implements CustomArrayOperationService {
