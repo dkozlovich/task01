@@ -41,10 +41,11 @@ public class CustomArrayOperationService {
     }
 
     public static void replaceAllNegative(CustomArray customArray) {
-        for (int i = 0; i < customArray.getCustomArray().length; i++) {
-            if (customArray.getCustomArray()[i] < 0) {
-                int temp = customArray.getCustomArray()[i];
-                customArray.getCustomArray()[i] = Math.abs(temp);
+        int[] array = customArray.getCustomArray();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                int temp = array[i];
+                array[i] = Math.abs(temp);
             }
         }
     }
