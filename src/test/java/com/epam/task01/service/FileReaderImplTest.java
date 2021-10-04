@@ -10,13 +10,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
-public class ReadFromFileTest {
+public class FileReaderImplTest {
 
     @Test
     public void testRead() throws IOException, CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("toReadFrom.txt").getFile());
-        Optional<CustomArray> result = new FileReaderImpl().read(file);
+        Optional<CustomArray> result = new com.epam.task01.reader.impl.FileReaderImpl().read(file);
         CustomArray expected = new CustomArray(new int[]{7,8,9});
         Assert.assertEquals(expected,result.get());
     }
@@ -25,6 +25,6 @@ public class ReadFromFileTest {
     public void testCustomArrayException() throws IOException, CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("AllIncorrectStrings.txt").getFile());
-        new FileReaderImpl().read(file);
+        new com.epam.task01.reader.impl.FileReaderImpl().read(file);
     }
 }
