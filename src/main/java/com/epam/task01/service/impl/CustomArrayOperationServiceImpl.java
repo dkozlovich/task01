@@ -8,6 +8,10 @@ import java.util.stream.IntStream;
 
 public class CustomArrayOperationServiceImpl implements CustomArrayOperationService {
 
+    private CustomArrayOperationServiceImpl() {
+
+    }
+
     private static CustomArrayOperationService instance;
 
     public static CustomArrayOperationService getInstance() {
