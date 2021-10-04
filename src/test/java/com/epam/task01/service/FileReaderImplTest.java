@@ -3,10 +3,12 @@ package com.epam.task01.service;
 import com.epam.task01.entity.CustomArray;
 import com.epam.task01.exception.CustomArrayException;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import com.epam.task01.reader.impl.FileReaderImpl;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Optional;
 
