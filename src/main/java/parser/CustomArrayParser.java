@@ -23,7 +23,7 @@ public class CustomArrayParser {
             }
         } catch (NumberFormatException e) {
             logger.log(Level.ERROR,"The string is not valid. " + Arrays.toString(s));
-            throw new CustomArrayException(new Throwable("The string contains not valid symbols!"));
+            throw new CustomArrayException("The string contains not valid symbols!");
         }
         if (intArray.length > 1) {
             logger.log(Level.INFO, "Valid string found! " + Arrays.toString(intArray));

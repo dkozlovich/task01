@@ -34,6 +34,6 @@ public class ReadFromFile {
             }
         }
         logger.log(Level.ERROR,"No valid arrays found!");
-        throw new CustomArrayException(new Throwable("No valid arrays found!"));
+        throw new CustomArrayException("No valid arrays found!");
     }
 }
