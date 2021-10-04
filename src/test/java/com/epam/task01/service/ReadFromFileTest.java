@@ -4,7 +4,7 @@ import com.epam.task01.entity.CustomArray;
 import com.epam.task01.exception.CustomArrayException;
 import org.junit.Assert;
 import org.junit.Test;
-import com.epam.task01.reader.impl.ReadFromFileImpl;
+import com.epam.task01.reader.impl.FileReaderImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class ReadFromFileTest {
     public void testRead() throws IOException, CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("toReadFrom.txt").getFile());
-        Optional<CustomArray> result = new ReadFromFileImpl().read(file);
+        Optional<CustomArray> result = new FileReaderImpl().read(file);
         CustomArray expected = new CustomArray(new int[]{7,8,9});
         Assert.assertEquals(expected,result.get());
     }
@@ -25,6 +25,6 @@ public class ReadFromFileTest {
     public void testCustomArrayException() throws IOException, CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("AllIncorrectStrings.txt").getFile());
-        new ReadFromFileImpl().read(file);
+        new FileReaderImpl().read(file);
     }
 }

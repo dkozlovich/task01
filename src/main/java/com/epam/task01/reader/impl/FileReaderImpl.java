@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
-public class ReadFromFileImpl implements Read {
+public class FileReaderImpl implements Read<File> {
 
     private static final Logger logger = LogManager.getLogger();
 

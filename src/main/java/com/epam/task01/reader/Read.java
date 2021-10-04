@@ -7,6 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
-public interface Read {
-    Optional<CustomArray> read(File file) throws IOException, CustomArrayException;
+public interface Read<T> {
+    Optional<CustomArray> read(T t) throws IOException, CustomArrayException;
 }

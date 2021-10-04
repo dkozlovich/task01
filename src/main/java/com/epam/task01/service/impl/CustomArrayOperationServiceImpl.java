@@ -3,41 +3,38 @@ package com.epam.task01.service.impl;
 import com.epam.task01.entity.CustomArray;
 import com.epam.task01.service.CustomArrayOperationService;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class CustomArrayOperationServiceImpl implements CustomArrayOperationService {
 
     public int getMin(CustomArray customArray) {
-        int min;
-        min = IntStream.of(customArray.getCustomArray()).min().getAsInt();
+        int min = IntStream.of(customArray.getCustomArray()).min().getAsInt();
         return min;
     }
 
     public int getMax(CustomArray customArray) {
-        int max;
-        max = IntStream.of(customArray.getCustomArray()).max().getAsInt();
+        int max = IntStream.of(customArray.getCustomArray()).max().getAsInt();
         return max;
     }
 
     public int getAverage(CustomArray customArray) {
-        return (int) IntStream.of(customArray.getCustomArray()).average().getAsDouble();
+        int average = (int) IntStream.of(customArray.getCustomArray()).average().getAsDouble();
+        return average;
     }
 
     public int getSum(CustomArray customArray) {
-        int sum;
-        sum = IntStream.of(customArray.getCustomArray()).sum();
+        int sum = IntStream.of(customArray.getCustomArray()).sum();
         return sum;
     }
 
     public int getNumberOfPositive(CustomArray customArray) {
-        int number;
-        number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x > 0).count();
+        int number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x > 0).count();
         return number;
     }
 
     public int getNumberOfNegative(CustomArray customArray) {
-        int number;
-        number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x < 0).count();
+        int number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x < 0).count();
         return number;
     }
 
