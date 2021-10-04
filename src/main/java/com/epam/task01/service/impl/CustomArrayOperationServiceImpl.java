@@ -1,46 +1,47 @@
-package service;
+package com.epam.task01.service.impl;
 
-import entity.CustomArray;
+import com.epam.task01.entity.CustomArray;
+import com.epam.task01.service.CustomArrayOperationService;
 
 import java.util.stream.IntStream;
 
-public class CustomArrayOperationService {
+public class CustomArrayOperationServiceImpl implements CustomArrayOperationService {
 
-    public static int getMin(CustomArray customArray) {
+    public int getMin(CustomArray customArray) {
         int min;
         min = IntStream.of(customArray.getCustomArray()).min().getAsInt();
         return min;
     }
 
-    public static int getMax(CustomArray customArray) {
+    public int getMax(CustomArray customArray) {
         int max;
         max = IntStream.of(customArray.getCustomArray()).max().getAsInt();
         return max;
     }
 
-    public static int getAverage(CustomArray customArray) {
+    public int getAverage(CustomArray customArray) {
         return (int) IntStream.of(customArray.getCustomArray()).average().getAsDouble();
     }
 
-    public static int getSum(CustomArray customArray) {
+    public int getSum(CustomArray customArray) {
         int sum;
         sum = IntStream.of(customArray.getCustomArray()).sum();
         return sum;
     }
 
-    public static int getNumberOfPositive(CustomArray customArray) {
+    public int getNumberOfPositive(CustomArray customArray) {
         int number;
         number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x > 0).count();
         return number;
     }
 
-    public static int getNumberOfNegative(CustomArray customArray) {
+    public int getNumberOfNegative(CustomArray customArray) {
         int number;
         number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x < 0).count();
         return number;
     }
 
-    public static void replaceAllNegative(CustomArray customArray) {
+    public CustomArray replaceAllNegative(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 0) {
@@ -48,9 +49,10 @@ public class CustomArrayOperationService {
                 array[i] = Math.abs(temp);
             }
         }
+        return new CustomArray(array);
     }
 
-    public static void bubbleSort(CustomArray customArray) {
+    public CustomArray bubbleSort(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         boolean sorted = false;
         int temp;
@@ -65,9 +67,10 @@ public class CustomArrayOperationService {
                 }
             }
         }
+        return new CustomArray(array);
     }
 
-    public static void insertionSort(CustomArray customArray) {
+    public CustomArray insertionSort(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         for (int i = 1; i < array.length; i++) {
             int current = array[i];
@@ -78,9 +81,10 @@ public class CustomArrayOperationService {
             }
             array[j+1] = current;
         }
+        return new CustomArray(array);
     }
 
-    public static void selectionSort(CustomArray customArray) {
+    public CustomArray selectionSort(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         for (int i = 0; i < array.length; i++) {
             int min = array[i];
@@ -95,6 +99,7 @@ public class CustomArrayOperationService {
             array[i] = min;
             array[minId] = temp;
         }
+        return new CustomArray(array);
     }
 
 }

@@ -1,4 +1,4 @@
-package exception;
+package com.epam.task01.exception;
 
 public class CustomArrayException extends Exception{
     public CustomArrayException(Throwable cause) {

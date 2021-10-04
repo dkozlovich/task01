@@ -1,20 +1,21 @@
-package parser;
+package com.epam.task01.parser;
 
-import entity.CustomArray;
-import exception.CustomArrayException;
+import com.epam.task01.entity.CustomArray;
+import com.epam.task01.exception.CustomArrayException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 public class CustomArrayParser {
 
     private static final Logger logger = LogManager.getLogger();
     private static final String REGEX = ",\\s|\\s-\\s|\\s";
 
-    public static CustomArray parse(String str) throws CustomArrayException {
+    public static Optional<CustomArray> parse(String str) throws CustomArrayException {
         String[] s = str.split(REGEX);
         int[] intArray = new int[s.length];
         try {
@@ -27,7 +28,7 @@ public class CustomArrayParser {
         }
         if (intArray.length > 1) {
             logger.log(Level.INFO, "Valid string found! " + Arrays.toString(intArray));
-            return new CustomArray(intArray);
-        } else return null;
+            return Optional.of(new CustomArray(intArray));
+        } else return Optional.empty();
     }
 }

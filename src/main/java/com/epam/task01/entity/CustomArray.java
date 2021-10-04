@@ -1,16 +1,17 @@
-package entity;
+package com.epam.task01.entity;
 
 import java.util.Arrays;
 
 public class CustomArray {
-    private int[] customArray;
+    private final int[] customArray;
 
     public CustomArray(int[] array) {
         this.customArray = array;
     }
 
     public int[] getCustomArray() {
-        return customArray;
+        int[] arrayCopy = customArray.clone();
+        return arrayCopy;
     }
 
     @Override
