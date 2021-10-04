@@ -1,8 +1,0 @@
-2021-10-05 00:46:09 [parse] [26] ERROR com.epam.task01.parser.CustomArrayParser - The string is not valid. [1, 2z, 3]
-2021-10-05 00:46:09 [parse] [26] ERROR com.epam.task01.parser.CustomArrayParser - The string is not valid. [4, 5,6]
-2021-10-05 00:46:09 [parse] [30] INFO  com.epam.task01.parser.CustomArrayParser - Valid string found! [7, 8, 9]
-2021-10-05 00:46:09 [read] [33] INFO  epam.task01.reader.impl.FileReaderImpl - Valid array found! [7, 8, 9]
-2021-10-05 00:46:09 [parse] [26] ERROR com.epam.task01.parser.CustomArrayParser - The string is not valid. [5g, 6, 7]
-2021-10-05 00:46:09 [parse] [26] ERROR com.epam.task01.parser.CustomArrayParser - The string is not valid. [2d, 1, 7]
-2021-10-05 00:46:09 [parse] [26] ERROR com.epam.task01.parser.CustomArrayParser - The string is not valid. [2.., 5, 0]
-2021-10-05 00:46:09 [read] [38] ERROR epam.task01.reader.impl.FileReaderImpl - No valid arrays found!
