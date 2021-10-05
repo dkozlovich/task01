@@ -28,6 +28,8 @@ public class CustomArrayParser {
         if (intArray.length > 1) {
             logger.log(Level.INFO, "Valid string found! " + Arrays.toString(intArray));
             return Optional.of(new CustomArray(intArray));
-        } else return Optional.empty();
+        } else {
+            return Optional.empty();
+        }
     }
 }
