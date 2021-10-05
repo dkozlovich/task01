@@ -12,7 +12,7 @@ import java.util.Optional;
 public class FileReaderImplTest {
 
     @Test
-    public void testRead() throws IOException, CustomArrayException {
+    public void testRead() throws CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("toReadFrom.txt").getFile());
         Optional<CustomArray> result = new com.epam.task01.reader.impl.FileReaderImpl().read(file);
@@ -21,7 +21,7 @@ public class FileReaderImplTest {
     }
 
     @Test(expected = CustomArrayException.class)
-    public void testCustomArrayException() throws IOException, CustomArrayException {
+    public void testCustomArrayException() throws CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("AllIncorrectStrings.txt").getFile());
         new com.epam.task01.reader.impl.FileReaderImpl().read(file);
