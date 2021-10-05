@@ -28,4 +28,9 @@ public class CustomArray {
     public int hashCode() {
         return Arrays.hashCode(customArray);
     }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(customArray);
+    }
 }

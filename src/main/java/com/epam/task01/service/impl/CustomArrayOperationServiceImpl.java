@@ -20,36 +20,101 @@ public class CustomArrayOperationServiceImpl implements CustomArrayOperationServ
         return instance;
     }
 
-    public int getMin(CustomArray customArray) {
+    @Override
+    public int findMinStream(CustomArray customArray) {
         int min = IntStream.of(customArray.getCustomArray()).min().getAsInt();
         return min;
     }
 
-    public int getMax(CustomArray customArray) {
+    @Override
+    public int findMin(CustomArray customArray) {
+        int min = customArray.getCustomArray()[0];
+        for (int i = 0; i < customArray.getCustomArray().length; i++) {
+            if (customArray.getCustomArray()[i] < min) {
+                min = customArray.getCustomArray()[i];
+            }
+        }
+        return min;
+    }
+
+    @Override
+    public int findMaxStream(CustomArray customArray) {
         int max = IntStream.of(customArray.getCustomArray()).max().getAsInt();
         return max;
     }
 
-    public int getAverage(CustomArray customArray) {
+    @Override
+    public int findMax(CustomArray customArray) {
+        int max = customArray.getCustomArray()[0];
+        for (int i = 0; i < customArray.getCustomArray().length; i++) {
+            if (customArray.getCustomArray()[i] > max) {
+                max = customArray.getCustomArray()[i];
+            }
+        }
+        return max;
+    }
+
+    @Override
+    public int findAverageStream(CustomArray customArray) {
         int average = (int) IntStream.of(customArray.getCustomArray()).average().getAsDouble();
         return average;
     }
 
-    public int getSum(CustomArray customArray) {
+    @Override
+    public int findAverage(CustomArray customArray) {
+        return findSum(customArray) / customArray.getCustomArray().length;
+    }
+
+    @Override
+    public int findSumStream(CustomArray customArray) {
         int sum = IntStream.of(customArray.getCustomArray()).sum();
         return sum;
     }
 
-    public int getNumberOfPositive(CustomArray customArray) {
+    @Override
+    public int findSum(CustomArray customArray) {
+        int sum = 0;
+        for (int i = 0; i < customArray.getCustomArray().length; i++) {
+            sum = sum + customArray.getCustomArray()[i];
+        }
+        return sum;
+    }
+
+    @Override
+    public int findNumberOfPositiveStream(CustomArray customArray) {
         int number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x > 0).count();
         return number;
     }
 
-    public int getNumberOfNegative(CustomArray customArray) {
+    @Override
+    public int findNumberOfPositive(CustomArray customArray) {
+        int number = 0;
+        for (int i = 0; i < customArray.getCustomArray().length; i++) {
+            if (customArray.getCustomArray()[i] > 0) {
+                number++;
+            }
+        }
+        return number;
+    }
+
+    @Override
+    public int findNumberOfNegativeStream(CustomArray customArray) {
         int number = (int) IntStream.of(customArray.getCustomArray()).filter(x -> x < 0).count();
         return number;
     }
 
+    @Override
+    public int findNumberOfNegative(CustomArray customArray) {
+        int number = 0;
+        for (int i = 0; i < customArray.getCustomArray().length; i++) {
+            if (customArray.getCustomArray()[i] < 0) {
+                number++;
+            }
+        }
+        return number;
+    }
+
+    @Override
     public CustomArray replaceAllNegative(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         for (int i = 0; i < array.length; i++) {
@@ -57,56 +122,6 @@ public class CustomArrayOperationServiceImpl implements CustomArrayOperationServ
                 int temp = array[i];
                 array[i] = Math.abs(temp);
             }
-        }
-        return new CustomArray(array);
-    }
-
-    public CustomArray bubbleSort(CustomArray customArray) {
-        int[] array = customArray.getCustomArray();
-        boolean sorted = false;
-        int temp;
-        while (!sorted) {
-            sorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
-                if (array[i] > array[i+1]) {
-                    temp = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] = temp;
-                    sorted = false;
-                }
-            }
-        }
-        return new CustomArray(array);
-    }
-
-    public CustomArray insertionSort(CustomArray customArray) {
-        int[] array = customArray.getCustomArray();
-        for (int i = 1; i < array.length; i++) {
-            int current = array[i];
-            int j = i - 1;
-            while (j >= 0 && current < array[j]) {
-                array[j+1] = array[j];
-                j--;
-            }
-            array[j+1] = current;
-        }
-        return new CustomArray(array);
-    }
-
-    public CustomArray selectionSort(CustomArray customArray) {
-        int[] array = customArray.getCustomArray();
-        for (int i = 0; i < array.length; i++) {
-            int min = array[i];
-            int minId = i;
-            for (int j = i+1; j < array.length; j++) {
-                if (array[j] < min) {
-                    min = array[j];
-                    minId = j;
-                }
-            }
-            int temp = array[i];
-            array[i] = min;
-            array[minId] = temp;
         }
         return new CustomArray(array);
     }

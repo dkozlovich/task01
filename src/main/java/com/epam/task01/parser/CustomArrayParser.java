@@ -12,24 +12,26 @@ import java.util.Optional;
 public class CustomArrayParser {
 
     private static final Logger logger = LogManager.getLogger();
-    private static final String REGEX = ",\\s|\\s-\\s|\\s";
+    private static final String DELIMITER_REGEX = ",\\s|\\s-\\s|\\s";
 
     public static Optional<CustomArray> parse(String str) throws CustomArrayException {
-        String[] s = str.split(REGEX);
-        int[] intArray = new int[s.length];
+        String[] numbers = str.split(DELIMITER_REGEX);
+        int[] intArray = new int[numbers.length];
         try {
             for (int i = 0; i < intArray.length; i++) {
-                intArray[i] = Integer.parseInt(s[i]);
+                intArray[i] = Integer.parseInt(numbers[i]);
             }
         } catch (NumberFormatException e) {
-            logger.log(Level.ERROR,"The string is not valid. " + Arrays.toString(s));
+            logger.log(Level.ERROR, "The string is not valid. " + Arrays.toString(numbers));
             throw new CustomArrayException("The string contains not valid symbols!");
         }
-        if (intArray.length > 1) {
+        Optional<CustomArray> customArray;
+        if (intArray.length > 0) {
             logger.log(Level.INFO, "Valid string found! " + Arrays.toString(intArray));
-            return Optional.of(new CustomArray(intArray));
+            customArray = Optional.of(new CustomArray(intArray));
         } else {
-            return Optional.empty();
+            customArray = Optional.empty();
         }
+        return customArray;
     }
 }
