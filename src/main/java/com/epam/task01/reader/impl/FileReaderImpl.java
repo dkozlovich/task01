@@ -3,7 +3,7 @@ package com.epam.task01.reader.impl;
 import com.epam.task01.entity.CustomArray;
 import com.epam.task01.exception.CustomArrayException;
 import com.epam.task01.parser.CustomArrayParser;
-import com.epam.task01.reader.Read;
+import com.epam.task01.reader.Reader;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Optional;
 
-public class FileReaderImpl implements Read<File> {
+public class FileReaderImpl implements Reader<File> {
 
     private static final Logger logger = LogManager.getLogger();
 

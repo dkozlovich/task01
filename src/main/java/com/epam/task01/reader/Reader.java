@@ -6,6 +6,6 @@ import com.epam.task01.exception.CustomArrayException;
 import java.io.IOException;
 import java.util.Optional;
 
-public interface Read<T> {
+public interface Reader<T> {
     Optional<CustomArray> read(T t) throws IOException, CustomArrayException;
 }
