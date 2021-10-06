@@ -1,13 +1,10 @@
 package com.epam.task01.service;
 
-import com.epam.task01.entity.CustomArray;
 import com.epam.task01.exception.CustomArrayException;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Optional;
 
 public class FileReaderImplTest {
 
@@ -15,9 +12,9 @@ public class FileReaderImplTest {
     public void testRead() throws CustomArrayException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("toReadFrom.txt").getFile());
-        Optional<CustomArray> result = new com.epam.task01.reader.impl.FileReaderImpl().read(file);
-        CustomArray expected = new CustomArray(new int[]{7,8,9});
-        Assert.assertEquals(expected,result.get());
+        String expected = "7 - 8 - 9";
+        String result = new com.epam.task01.reader.impl.FileReaderImpl().read(file);
+        Assert.assertEquals(expected,result);
     }
 
     @Test(expected = CustomArrayException.class)

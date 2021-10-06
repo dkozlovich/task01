@@ -1,11 +1,9 @@
 package com.epam.task01.reader;
 
-import com.epam.task01.entity.CustomArray;
 import com.epam.task01.exception.CustomArrayException;
 
-import java.io.IOException;
-import java.util.Optional;
+import java.io.File;
 
 public interface Reader<T> {
-    Optional<CustomArray> read(T t) throws IOException, CustomArrayException;
+    String read(File file) throws CustomArrayException;
 }
