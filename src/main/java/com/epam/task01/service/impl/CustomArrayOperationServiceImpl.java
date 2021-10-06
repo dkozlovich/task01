@@ -115,6 +115,13 @@ public class CustomArrayOperationServiceImpl implements CustomArrayOperationServ
     }
 
     @Override
+    public CustomArray replaceAllNegativeStream(CustomArray customArray) {
+        int[] array = customArray.getCustomArray();
+        int[] copyArray = IntStream.of(array).map(i -> i < 0 ? Math.abs(i) : i).toArray();
+        return new CustomArray(copyArray);
+    }
+
+    @Override
     public CustomArray replaceAllNegative(CustomArray customArray) {
         int[] array = customArray.getCustomArray();
         for (int i = 0; i < array.length; i++) {

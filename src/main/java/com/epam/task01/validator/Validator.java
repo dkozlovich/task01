@@ -13,7 +13,7 @@ public class Validator {
     private static final String MATCHER_REGEX = "\\d+";
 
     public static boolean validate(String str) {
-        boolean isValid = false;
+        boolean isValid;
         String[] numbers = str.split(DELIMITER_REGEX);
         for (int i = 0; i < numbers.length; i++) {
             isValid = numbers[i].matches(MATCHER_REGEX);
@@ -22,6 +22,7 @@ public class Validator {
                 return false;
             }
         }
-        return isValid;
+        logger.log(Level.INFO, "The string is valid. " + Arrays.toString(numbers));
+        return true;
     }
 }

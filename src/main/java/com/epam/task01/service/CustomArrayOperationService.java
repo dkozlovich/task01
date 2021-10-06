@@ -27,5 +27,7 @@ public interface CustomArrayOperationService {
 
     int findNumberOfNegative(CustomArray customArray);
 
+    CustomArray replaceAllNegativeStream(CustomArray customArray);
+
     CustomArray replaceAllNegative(CustomArray customArray);
 }
