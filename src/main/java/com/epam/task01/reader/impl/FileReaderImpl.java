@@ -6,13 +6,25 @@ import com.epam.task01.validator.Validator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class FileReaderImpl implements Reader<File> {
+
+    private FileReaderImpl() {
+
+    }
+
+    private static Reader instance;
+
+    public static Reader getInstance() {
+        if (instance == null) {
+            instance = new FileReaderImpl();
+        }
+        return instance;
+    }
 
     private static final Logger logger = LogManager.getLogger();
 

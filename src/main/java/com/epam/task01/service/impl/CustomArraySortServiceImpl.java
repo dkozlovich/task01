@@ -4,7 +4,6 @@ import com.epam.task01.entity.CustomArray;
 import com.epam.task01.service.CustomArraySortService;
 
 public class CustomArraySortServiceImpl implements CustomArraySortService {
-
     private CustomArraySortServiceImpl() {
 
     }

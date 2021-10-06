@@ -6,7 +6,6 @@ import com.epam.task01.service.CustomArrayOperationService;
 import java.util.stream.IntStream;
 
 public class CustomArrayOperationServiceImpl implements CustomArrayOperationService {
-
     private CustomArrayOperationServiceImpl() {
 
     }
