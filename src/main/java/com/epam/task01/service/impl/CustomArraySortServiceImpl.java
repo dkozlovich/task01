@@ -4,11 +4,11 @@ import com.epam.task01.entity.CustomArray;
 import com.epam.task01.service.CustomArraySortService;
 
 public class CustomArraySortServiceImpl implements CustomArraySortService {
+    private static CustomArraySortService instance;
+
     private CustomArraySortServiceImpl() {
 
     }
-
-    private static CustomArraySortService instance;
 
     public static CustomArraySortService getInstance() {
         if (instance == null) {

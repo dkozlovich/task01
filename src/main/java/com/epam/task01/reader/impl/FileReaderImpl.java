@@ -12,12 +12,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileReaderImpl implements Reader<File> {
+    private static final Logger logger = LogManager.getLogger();
+
+    private static Reader instance;
 
     private FileReaderImpl() {
 
     }
-
-    private static Reader instance;
 
     public static Reader getInstance() {
         if (instance == null) {
@@ -26,14 +27,12 @@ public class FileReaderImpl implements Reader<File> {
         return instance;
     }
 
-    private static final Logger logger = LogManager.getLogger();
-
     public String read(File file) throws CustomArrayException {
         String line;
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             boolean isCorrect;
             while ((line = reader.readLine()) != null) {
-                isCorrect = Validator.validate(line);
+                isCorrect = Validator.isValid(line);
                 if (isCorrect) {
                     return line;
                 }

@@ -12,7 +12,7 @@ public class Validator {
     private static final String DELIMITER_REGEX = ",\\s|\\s-\\s|\\s";
     private static final String MATCHER_REGEX = "\\d+";
 
-    public static boolean validate(String str) {
+    public static boolean isValid(String str) {
         boolean isValid;
         String[] numbers = str.split(DELIMITER_REGEX);
         for (int i = 0; i < numbers.length; i++) {
