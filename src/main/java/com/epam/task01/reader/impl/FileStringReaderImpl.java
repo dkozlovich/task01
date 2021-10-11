@@ -1,7 +1,7 @@
 package com.epam.task01.reader.impl;
 
 import com.epam.task01.exception.CustomArrayException;
-import com.epam.task01.reader.Reader;
+import com.epam.task01.reader.StringReader;
 import com.epam.task01.validator.Validator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -11,18 +11,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileReaderImpl implements Reader<File> {
+public class FileStringReaderImpl implements StringReader<File> {
     private static final Logger logger = LogManager.getLogger();
 
-    private static Reader instance;
+    private static StringReader instance;
 
-    private FileReaderImpl() {
+    private FileStringReaderImpl() {
 
     }
 
-    public static Reader getInstance() {
+    public static StringReader getInstance() {
         if (instance == null) {
-            instance = new FileReaderImpl();
+            instance = new FileStringReaderImpl();
         }
         return instance;
     }
