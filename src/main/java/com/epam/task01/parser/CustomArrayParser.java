@@ -10,8 +10,8 @@ public class CustomArrayParser {
         String[] numbers = str.split(DELIMITER_REGEX);
         int[] intArray = new int[numbers.length];
         for (int i = 0; i < intArray.length; i++) {
-                intArray[i] = Integer.parseInt(numbers[i]);
-            }
+            intArray[i] = Integer.parseInt(numbers[i]);
+        }
         CustomArray customArray = new CustomArray(intArray);
         return customArray;
     }

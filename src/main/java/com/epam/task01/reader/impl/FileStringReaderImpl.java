@@ -27,6 +27,7 @@ public class FileStringReaderImpl implements StringReader<File> {
         return instance;
     }
 
+    @Override
     public String read(File file) throws CustomArrayException {
         String line;
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
